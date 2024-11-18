@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="contact_container">
+      <form
+        action="https://api.web3forms.com/submit"
+        method="POST"
+        class="left_container"
+      >
+        <input
+          type="hidden"
+          name="access_key"
+          value="96f616d4-e1bd-4db6-a828-5428d253d4bd"
+        />
+        <div class="contact_left_title">
+          <h2>Contact Us</h2>
+          <hr />
+        </div>
+
+        <input
+          class="contact_input"
+          type="text"
+          name="name"
+          placeholder="Enter your name"
+        />
+        <input
+          class="contact_input"
+          type="email"
+          name="email"
+          placeholder="Enter your email"
+        />
+        <textarea
+          class="text_area"
+          name="message"
+          placeholder="Enter your message here..."
+        >
+        </textarea>
+        <button type="submit">
+          Submit
+          <img
+            class="submit_arrow"
+            src="up-arrow_4113279.png"
+            width="20"
+            alt=""
+          />
+        </button>
+      </form>
+      <div class="right_container">
+        <!--<img src="179a310421a2b9d96b27257b1dbad08b_w200.gif" alt="">-->
+        <div id="observablehq-chart-5ff88dee"></div>
+      </div>
+    </div>
+
+
+    <!--java script-->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@observablehq/inspector@5/dist/inspector.css"
+    />
+    <script type="module">
+      import {
+        Runtime,
+        Inspector,
+      } from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@5/dist/runtime.js";
+      import define from "https://api.observablehq.com/@d3/disjoint-force-directed-graph/2.js?v=4";
+      new Runtime().module(define, (name) => {
+        if (name === "chart")
+          return new Inspector(
+            document.querySelector("#observablehq-chart-5ff88dee")
+          );
+      });
+    </script>
+  </body>
+</html>
